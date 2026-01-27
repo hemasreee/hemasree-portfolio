@@ -8,20 +8,16 @@
 <style>
 /* ================= COLOR SYSTEM ================= */
 :root{
-  --bg:#f6f8fc;
   --text:#1f2937;
   --card:#ffffff;
   --accent:#4f46e5;
-  --muted:#64748b;
-  --grid:#e5e7eb;
+  --muted:#6b7280;
 }
 body.dark{
-  --bg:#0f172a;
   --text:#e5e7eb;
   --card:#1e293b;
   --accent:#818cf8;
-  --muted:#94a3b8;
-  --grid:#1e293b;
+  --muted:#9ca3af;
 }
 
 /* ================= GLOBAL ================= */
@@ -32,12 +28,22 @@ body{
   line-height:1.7;
   overflow-x:hidden;
 
-  /* DATA GRID BACKGROUND */
-  background:
-    linear-gradient(to right, var(--grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid) 1px, transparent 1px),
-    var(--bg);
-  background-size: 60px 60px;
+  /* PROFESSIONAL BACKGROUND */
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #eef2ff 40%,
+    #fdf2f8 100%
+  );
+}
+
+body.dark{
+  background: linear-gradient(
+    135deg,
+    #020617 0%,
+    #0f172a 50%,
+    #020617 100%
+  );
 }
 
 /* ================= HEADER ================= */
@@ -87,8 +93,8 @@ section.show{
 /* ================= HERO ================= */
 .hero{
   text-align:center;
-  background:linear-gradient(135deg,#eef2ff,#f8fafc);
-  border-radius:18px;
+  background:rgba(255,255,255,0.75);
+  border-radius:20px;
   padding:100px 24px;
   margin-top:40px;
   opacity:1;
@@ -96,7 +102,7 @@ section.show{
   box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 body.dark .hero{
-  background:linear-gradient(135deg,#020617,#1e293b);
+  background:rgba(30,41,59,0.9);
 }
 .hero h1{font-size:36px;}
 .hero p{font-size:18px;color:var(--muted);}
@@ -140,11 +146,15 @@ body.dark .tag{
   color:#c7d2fe;
 }
 
-/* ================= PROJECT IMAGES ================= */
-.project-img{
-  width:100%;
-  border-radius:14px;
-  margin:14px 0;
+/* ================= EDUCATION ================= */
+.edu-item{
+  border-left:4px solid var(--accent);
+  padding-left:20px;
+  margin-bottom:28px;
+}
+.edu-year{
+  color:var(--muted);
+  font-size:14px;
 }
 
 /* ================= FOOTER ================= */
@@ -168,6 +178,7 @@ footer{
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
     <button class="toggle" onclick="toggle()">🌙 / ☀️</button>
@@ -184,10 +195,9 @@ footer{
   <h2>Professional Summary</h2>
   <div class="card">
     <p>
-      Hello, I’m Madala Hemasree, a B.Tech CSE (Data Science) graduate with hands-on
-      experience in data analysis, machine learning, and visualization through academic projects.
-      I have worked with Python, SQL, Power BI, and dashboards to extract insights and support
-      data-driven decisions. I am seeking an entry-level Data Analyst or Data Science role.
+      Hello, I’m Madala Hemasree, a B.Tech Computer Science (Data Science) student with
+      hands-on experience in data analysis, machine learning, and visualization through
+      academic projects. I am seeking an entry-level Data Analyst or Data Science role.
     </p>
   </div>
 </section>
@@ -219,11 +229,35 @@ footer{
   </div>
 </section>
 
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="card edu-item">
+    <h3>B.Tech – Computer Science (Data Science)</h3>
+    <p>Ravindra College of Engineering for Women, Kurnool, India</p>
+    <p><b>CGPA:</b> 8 / 10</p>
+    <p class="edu-year">2022 – 2026</p>
+  </div>
+
+  <div class="card edu-item">
+    <h3>Intermediate</h3>
+    <p>Narayana Junior College, Hyderabad, India</p>
+    <p><b>Percentage:</b> 90.3%</p>
+    <p class="edu-year">2020 – 2022</p>
+  </div>
+
+  <div class="card edu-item">
+    <h3>SSC</h3>
+    <p>Bhashyam Public School, India</p>
+    <p><b>Percentage:</b> 98.0%</p>
+    <p class="edu-year">2019 – 2020</p>
+  </div>
+</section>
+
 <section id="projects">
   <h2>Projects</h2>
   <div class="card">
     <h3>Crime Data Analysis & Visualization</h3>
-    <img src="crime.png" class="project-img">
     <p>Analyzed crime trends and hotspots using exploratory data analysis.</p>
   </div>
 </section>
@@ -249,8 +283,11 @@ window.addEventListener("scroll",()=>{
     }
   });
 });
-function toggle(){document.body.classList.toggle("dark");}
+function toggle(){
+  document.body.classList.toggle("dark");
+}
 </script>
 
 </body>
 </html>
+
