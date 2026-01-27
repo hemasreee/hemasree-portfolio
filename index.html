@@ -27,24 +27,37 @@ body{
   color:var(--text);
   line-height:1.7;
   overflow-x:hidden;
-
-  /* PROFESSIONAL BACKGROUND */
-  background: linear-gradient(
-    135deg,
-    #f8fafc 0%,
-    #eef2ff 40%,
-    #fdf2f8 100%
-  );
+  background: linear-gradient(135deg,#f8fafc,#eef2ff,#fdf2f8);
 }
-
 body.dark{
-  background: linear-gradient(
-    135deg,
-    #020617 0%,
-    #0f172a 50%,
-    #020617 100%
-  );
+  background: linear-gradient(135deg,#020617,#0f172a,#020617);
 }
+
+/* ================= BACKGROUND FIGURES ================= */
+.bg-shape{
+  position:fixed;
+  z-index:-1;
+  opacity:0.25;
+  filter: blur(40px);
+}
+.bg1{
+  width:420px;height:260px;
+  background:#c7d2fe;
+  top:-60px;left:-100px;
+}
+.bg2{
+  width:360px;height:240px;
+  background:#bae6fd;
+  top:40%;right:-120px;
+}
+.bg3{
+  width:420px;height:280px;
+  background:#fbcfe8;
+  bottom:-80px;left:30%;
+}
+body.dark .bg1{background:#1e293b;}
+body.dark .bg2{background:#020617;}
+body.dark .bg3{background:#312e81;}
 
 /* ================= HEADER ================= */
 header{
@@ -129,7 +142,7 @@ body.dark .hero{
 /* ================= SKILLS ================= */
 .skills-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:22px;
 }
 .tag{
@@ -173,6 +186,11 @@ footer{
 
 <body>
 
+<!-- BACKGROUND FIGURES -->
+<div class="bg-shape bg1"></div>
+<div class="bg-shape bg2"></div>
+<div class="bg-shape bg3"></div>
+
 <header>
   <strong>Madala Hemasree</strong>
   <nav>
@@ -195,9 +213,15 @@ footer{
   <h2>Professional Summary</h2>
   <div class="card">
     <p>
-      Hello, I’m Madala Hemasree, a B.Tech Computer Science (Data Science) student with
-      hands-on experience in data analysis, machine learning, and visualization through
-      academic projects. I am seeking an entry-level Data Analyst or Data Science role.
+      Hello, I’m Madala Hemasree, a B.Tech Computer Science (Data Science) student with a strong
+      interest in data analysis and machine learning. I have hands-on experience working with
+      Python, SQL, Power BI, and data visualization tools through academic and personal projects.
+      I have analyzed datasets, built predictive models, and created meaningful insights using
+      machine learning algorithms and dashboards.
+      <br><br>
+      I apply analytical thinking and basic AI tools to solve data-driven problems while
+      maintaining accuracy and clarity. I am seeking an entry-level Data Analyst or Data Science
+      role where I can contribute to data-driven decision-making and continue to enhance my skills.
     </p>
   </div>
 </section>
@@ -205,6 +229,7 @@ footer{
 <section id="skills">
   <h2>Skills</h2>
   <div class="skills-grid">
+
     <div class="card">
       <b>Programming</b><br>
       <span class="tag">Python</span>
@@ -212,20 +237,32 @@ footer{
       <span class="tag">Java (Basic)</span>
       <span class="tag">DSA – Intermediate</span>
     </div>
+
     <div class="card">
       <b>Data & Analytics</b><br>
       <span class="tag">EDA</span>
       <span class="tag">Statistics</span>
       <span class="tag">Predictive Analytics</span>
+      <span class="tag">Data Visualization</span>
     </div>
+
     <div class="card">
       <b>Tools</b><br>
       <span class="tag">Power BI</span>
       <span class="tag">Tableau</span>
+      <span class="tag">Excel</span>
+    </div>
+
+    <div class="card">
+      <b>Libraries</b><br>
       <span class="tag">NumPy</span>
       <span class="tag">Pandas</span>
       <span class="tag">Matplotlib</span>
+      <span class="tag">Seaborn</span>
+      <span class="tag">Scikit-learn</span>
+      <span class="tag">TensorFlow</span>
     </div>
+
   </div>
 </section>
 
@@ -252,14 +289,32 @@ footer{
     <p><b>Percentage:</b> 98.0%</p>
     <p class="edu-year">2019 – 2020</p>
   </div>
+
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
+
   <div class="card">
     <h3>Crime Data Analysis & Visualization</h3>
-    <p>Analyzed crime trends and hotspots using exploratory data analysis.</p>
+    <p>Performed exploratory data analysis to identify crime trends and patterns.</p>
   </div>
+
+  <div class="card">
+    <h3>Unemployment Data Analysis</h3>
+    <p>Analyzed unemployment datasets to understand regional and temporal trends.</p>
+  </div>
+
+  <div class="card">
+    <h3>Iris Flower Classification</h3>
+    <p>Implemented machine learning models to classify iris flower species.</p>
+  </div>
+
+  <div class="card">
+    <h3>Brain Tumor Classification (CNN)</h3>
+    <p>Built a deep learning CNN model to classify brain tumors from MRI images.</p>
+  </div>
+
 </section>
 
 <section id="contact">
@@ -290,4 +345,3 @@ function toggle(){
 
 </body>
 </html>
-
