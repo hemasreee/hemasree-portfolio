@@ -74,4 +74,153 @@
       margin-top: 40px;
       opacity: 1;
       transform: none;
-      padding: 90px 4
+      padding: 90px 40px;
+    }
+
+    body.dark .hero {
+      background: linear-gradient(135deg, #020617, #1e293b);
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: var(--accent);
+      color: white;
+      font-size: 14px;
+      border: none;
+    }
+
+    h2 {
+      margin-bottom: 28px;
+    }
+
+    .project-card,
+    .skill-box,
+    .contact-box {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 26px;
+      margin-bottom: 26px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h2>Madala Hemasree</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="toggle-btn" onclick="toggleMode()">🌙 / ☀️</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero show">
+    <h1>Data Science Student | Aspiring Data Analyst</h1>
+    <p>Turning data into insights using analytics and machine learning.</p>
+    <a href="resume.pdf" class="resume-btn">Download Resume</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am Madala Hemasree, a B.Tech CSE (Data Science) student with CGPA 8.0,
+      experienced in data analysis, ML, and visualization.
+    </p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <h3>Crime Data Analysis</h3>
+      <p>Exploratory data analysis and Streamlit dashboard.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Brain Tumor Classification (CNN)</h3>
+      <p>Deep learning model for MRI-based tumor classification.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-box">Python, SQL, Java (Basic)</div>
+      <div class="skill-box">Power BI, Tableau</div>
+      <div class="skill-box">NumPy, Pandas, Matplotlib</div>
+      <div class="skill-box">Teamwork, Leadership</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p><strong>Name:</strong> Madala Hemasree</p>
+      <p><strong>Email:</strong> madalahemasree0331@gmail.com</p>
+      <p><strong>Contact:</strong> 6309816547</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Madala Hemasree | Portfolio
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+          sec.classList.add("show");
+        }
+      });
+    });
+
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>
+
