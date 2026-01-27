@@ -1,226 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Madala Hemasree | Data Science Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Madala Hemasree | Interactive Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --text: #1f2937;
-      --card: #ffffff;
-      --header: #e0f2fe;
-      --accent: #6366f1;
-    }
-
-    body.dark {
-      --bg: #0f172a;
-      --text: #e5e7eb;
-      --card: #1e293b;
-      --header: #020617;
-      --accent: #818cf8;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      transition: all 0.3s ease;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      background: var(--header);
-      padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    header h2 {
-      margin: 0;
-    }
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 40px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
-
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hero {
-      text-align: center;
-      background: linear-gradient(135deg, #fdf2f8, #ecfeff);
-      border-radius: 18px;
-      margin-top: 40px;
-      opacity: 1;
-      transform: none;
-      padding: 90px 40px;
-    }
-
-    body.dark .hero {
-      background: linear-gradient(135deg, #020617, #1e293b);
-    }
-
-    .hero h1 {
-      font-size: 36px;
-    }
-
-    .resume-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      background-color: var(--accent);
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-      margin-top: 20px;
-    }
-
-    .toggle-btn {
-      cursor: pointer;
-      padding: 8px 16px;
-      border-radius: 20px;
-      background: var(--accent);
-      color: white;
-      font-size: 14px;
-      border: none;
-    }
-
-    h2 {
-      margin-bottom: 28px;
-    }
-
-    .project-card,
-    .skill-box,
-    .contact-box {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 26px;
-      margin-bottom: 26px;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      opacity: 0.7;
-    }
-  </style>
+<style>
+:root{
+  --bg:#f8fafc;
+  --text:#1f2937;
+  --card:#ffffff;
+  --header:#e0f2fe;
+  --accent:#6366f1;
+}
+body.dark{
+  --bg:#0f172a;
+  --text:#e5e7eb;
+  --card:#1e293b;
+  --header:#020617;
+  --accent:#818cf8;
+}
+body{
+  margin:0;
+  font-family:"Segoe UI",Tahoma,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+  line-height:1.7;
+}
+header{
+  position:sticky;
+  top:0;
+  background:var(--header);
+  padding:14px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+nav a{
+  margin-right:16px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+}
+.toggle{
+  background:var(--accent);
+  color:white;
+  border:none;
+  border-radius:20px;
+  padding:6px 14px;
+  cursor:pointer;
+}
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 24px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s;
+}
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.hero{
+  text-align:center;
+  background:linear-gradient(135deg,#fdf2f8,#ecfeff);
+  border-radius:18px;
+  padding:90px 24px;
+  margin-top:30px;
+  opacity:1;
+  transform:none;
+}
+body.dark .hero{
+  background:linear-gradient(135deg,#020617,#1e293b);
+}
+.hero h1{font-size:34px;}
+.hero p{font-size:18px;}
+.resume{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 26px;
+  background:var(--accent);
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+}
+h2{margin-bottom:24px;}
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:18px;
+}
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 10px 20px rgba(0,0,0,.05);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px);}
+.project-img{
+  width:100%;
+  border-radius:12px;
+  margin:12px 0;
+}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.gallery img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:16px;
+  transition:.4s;
+}
+.gallery img:hover{transform:scale(1.1);}
+footer{
+  text-align:center;
+  padding:20px;
+  opacity:.7;
+}
+@media(max-width:768px){
+  .hero h1{font-size:26px;}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h2>Madala Hemasree</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-      <button class="toggle-btn" onclick="toggleMode()">🌙 / ☀️</button>
-    </nav>
-  </header>
+<header>
+<h3>Madala Hemasree</h3>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<button class="toggle" onclick="toggle()">🌙 / ☀️</button>
+</nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero show">
-    <h1>Data Science Student | Aspiring Data Analyst</h1>
-    <p>Turning data into insights using analytics and machine learning.</p>
-    <a href="resume.pdf" class="resume-btn">Download Resume</a>
-  </section>
+<section class="hero show">
+<h1>Data Science Student | Aspiring Data Analyst</h1>
+<p>Turning data into insights using analytics, machine learning and visualization</p>
+<a href="resume.pdf" class="resume">Download Resume</a>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am Madala Hemasree, a B.Tech CSE (Data Science) student with CGPA 8.0,
-      experienced in data analysis, ML, and visualization.
-    </p>
-  </section>
+<section id="about">
+<h2>About Me</h2>
+<p>
+I am Madala Hemasree, a B.Tech CSE (Data Science) student with CGPA 8.0.
+I enjoy analyzing real-world datasets and building meaningful insights
+using Python, ML and visualization tools.
+</p>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills">
+<div class="card">Python, SQL, Java (Basic)</div>
+<div class="card">Power BI, Tableau</div>
+<div class="card">NumPy, Pandas, Matplotlib</div>
+<div class="card">Teamwork, Leadership</div>
+</div>
+</section>
 
-    <div class="project-card">
-      <h3>Crime Data Analysis</h3>
-      <p>Exploratory data analysis and Streamlit dashboard.</p>
-    </div>
+<section id="projects">
+<h2>Projects</h2>
 
-    <div class="project-card">
-      <h3>Brain Tumor Classification (CNN)</h3>
-      <p>Deep learning model for MRI-based tumor classification.</p>
-    </div>
-  </section>
+<div class="card">
+<h3>Crime Data Analysis & Visualization</h3>
+<img class="project-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+<p>Identified crime trends and hotspots using EDA and interactive visualizations.</p>
+<p><b>Tools:</b> Python, Pandas, Streamlit</p>
+</div>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Skills</h2>
+<div class="card">
+<h3>Unemployment Data Analysis</h3>
+<img class="project-img" src="https://images.unsplash.com/photo-1581091870627-3c8d3b1d2b4a">
+<p>Analyzed unemployment patterns using statistical methods and charts.</p>
+<p><b>Tools:</b> Python, Matplotlib</p>
+</div>
 
-    <div class="skills-grid">
-      <div class="skill-box">Python, SQL, Java (Basic)</div>
-      <div class="skill-box">Power BI, Tableau</div>
-      <div class="skill-box">NumPy, Pandas, Matplotlib</div>
-      <div class="skill-box">Teamwork, Leadership</div>
-    </div>
-  </section>
+<div class="card">
+<h3>Brain Tumor Classification (CNN)</h3>
+<img class="project-img" src="https://images.unsplash.com/photo-1581091012184-5c8e5f2f0d3d">
+<p>Deep learning model to classify MRI brain tumor images.</p>
+<p><b>Tools:</b> Python, CNN, Deep Learning</p>
+</div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-box">
-      <p><strong>Name:</strong> Madala Hemasree</p>
-      <p><strong>Email:</strong> madalahemasree0331@gmail.com</p>
-      <p><strong>Contact:</strong> 6309816547</p>
-    </div>
-  </section>
+<section id="gallery">
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+<img src="https://images.unsplash.com/photo-1534759846116-5799c33ce22a">
+<img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+</div>
+</section>
 
-  <footer>
-    © 2026 Madala Hemasree | Portfolio
-  </footer>
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<p><b>Name:</b> Madala Hemasree</p>
+<p><b>Email:</b> madalahemasree0331@gmail.com</p>
+<p><b>Phone:</b> 6309816547</p>
+</div>
+</section>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    const sections = document.querySelectorAll("section");
+<footer>
+© 2026 Madala Hemasree | Interactive Portfolio
+</footer>
 
-    window.addEventListener("scroll", () => {
-      sections.forEach(sec => {
-        if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-          sec.classList.add("show");
-        }
-      });
-    });
-
-    function toggleMode() {
-      document.body.classList.toggle("dark");
-    }
-  </script>
+<script>
+const secs=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+secs.forEach(s=>{
+if(s.getBoundingClientRect().top<window.innerHeight-100){
+s.classList.add("show");
+}
+});
+});
+function toggle(){document.body.classList.toggle("dark");}
+</script>
 
 </body>
 </html>
-
