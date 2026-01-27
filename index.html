@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ================= COLOR SYSTEM ================= */
 :root{
   --text:#1f2937;
   --card:#ffffff;
@@ -20,7 +19,6 @@ body.dark{
   --muted:#9ca3af;
 }
 
-/* ================= GLOBAL ================= */
 body{
   margin:0;
   font-family:"Segoe UI",Tahoma,sans-serif;
@@ -33,33 +31,20 @@ body.dark{
   background: linear-gradient(135deg,#020617,#0f172a,#020617);
 }
 
-/* ================= BACKGROUND FIGURES ================= */
+/* BACKGROUND FIGURES */
 .bg-shape{
   position:fixed;
   z-index:-1;
   opacity:0.25;
   filter: blur(40px);
 }
-.bg1{
-  width:420px;height:260px;
-  background:#c7d2fe;
-  top:-60px;left:-100px;
-}
-.bg2{
-  width:360px;height:240px;
-  background:#bae6fd;
-  top:40%;right:-120px;
-}
-.bg3{
-  width:420px;height:280px;
-  background:#fbcfe8;
-  bottom:-80px;left:30%;
-}
+.bg1{width:420px;height:260px;background:#c7d2fe;top:-60px;left:-100px;}
+.bg2{width:360px;height:240px;background:#bae6fd;top:40%;right:-120px;}
+.bg3{width:420px;height:280px;background:#fbcfe8;bottom:-80px;left:30%;}
 body.dark .bg1{background:#1e293b;}
 body.dark .bg2{background:#020617;}
 body.dark .bg3{background:#312e81;}
 
-/* ================= HEADER ================= */
 header{
   position:sticky;
   top:0;
@@ -71,9 +56,7 @@ header{
   align-items:center;
   z-index:1000;
 }
-body.dark header{
-  background:rgba(2,6,23,0.9);
-}
+body.dark header{background:rgba(2,6,23,0.9);}
 nav a{
   margin-right:16px;
   text-decoration:none;
@@ -89,7 +72,6 @@ nav a{
   cursor:pointer;
 }
 
-/* ================= SECTIONS ================= */
 section{
   max-width:1100px;
   margin:auto;
@@ -98,25 +80,16 @@ section{
   transform:translateY(40px);
   transition:.8s;
 }
-section.show{
-  opacity:1;
-  transform:translateY(0);
-}
+section.show{opacity:1;transform:translateY(0);}
 
-/* ================= HERO ================= */
 .hero{
   text-align:center;
   background:rgba(255,255,255,0.75);
   border-radius:20px;
   padding:100px 24px;
   margin-top:40px;
-  opacity:1;
-  transform:none;
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
-body.dark .hero{
-  background:rgba(30,41,59,0.9);
-}
+body.dark .hero{background:rgba(30,41,59,0.9);}
 .hero h1{font-size:36px;}
 .hero p{font-size:18px;color:var(--muted);}
 .resume{
@@ -127,10 +100,8 @@ body.dark .hero{
   color:white;
   border-radius:30px;
   text-decoration:none;
-  font-weight:600;
 }
 
-/* ================= CARDS ================= */
 .card{
   background:var(--card);
   border-radius:16px;
@@ -139,54 +110,38 @@ body.dark .hero{
   box-shadow:0 14px 30px rgba(0,0,0,.06);
 }
 
-/* ================= SKILLS ================= */
-.skills-grid{
+.project-img{
+  width:100%;
+  border-radius:12px;
+  margin:14px 0;
+}
+
+.gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
-.tag{
-  display:inline-block;
-  background:#eef2ff;
-  color:#3730a3;
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:13px;
-  margin:4px 4px 0 0;
+.gallery img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:16px;
+  transition:.4s;
 }
-body.dark .tag{
-  background:#1e293b;
-  color:#c7d2fe;
+.gallery img:hover{
+  transform:scale(1.05);
 }
 
-/* ================= EDUCATION ================= */
-.edu-item{
-  border-left:4px solid var(--accent);
-  padding-left:20px;
-  margin-bottom:28px;
-}
-.edu-year{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* ================= FOOTER ================= */
 footer{
   text-align:center;
   padding:24px;
   color:var(--muted);
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-  .hero h1{font-size:28px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND FIGURES -->
 <div class="bg-shape bg1"></div>
 <div class="bg-shape bg2"></div>
 <div class="bg-shape bg3"></div>
@@ -198,6 +153,7 @@ footer{
     <a href="#skills">Skills</a>
     <a href="#education">Education</a>
     <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
     <button class="toggle" onclick="toggle()">🌙 / ☀️</button>
   </nav>
@@ -209,112 +165,45 @@ footer{
   <a href="resume.pdf" class="resume">Download Resume</a>
 </section>
 
-<section id="about">
-  <h2>Professional Summary</h2>
-  <div class="card">
-    <p>
-      Hello, I’m Madala Hemasree, a B.Tech Computer Science (Data Science) student with a strong
-      interest in data analysis and machine learning. I have hands-on experience working with
-      Python, SQL, Power BI, and data visualization tools through academic and personal projects.
-      I have analyzed datasets, built predictive models, and created meaningful insights using
-      machine learning algorithms and dashboards.
-      <br><br>
-      I apply analytical thinking and basic AI tools to solve data-driven problems while
-      maintaining accuracy and clarity. I am seeking an entry-level Data Analyst or Data Science
-      role where I can contribute to data-driven decision-making and continue to enhance my skills.
-    </p>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-
-    <div class="card">
-      <b>Programming</b><br>
-      <span class="tag">Python</span>
-      <span class="tag">SQL</span>
-      <span class="tag">Java (Basic)</span>
-      <span class="tag">DSA – Intermediate</span>
-    </div>
-
-    <div class="card">
-      <b>Data & Analytics</b><br>
-      <span class="tag">EDA</span>
-      <span class="tag">Statistics</span>
-      <span class="tag">Predictive Analytics</span>
-      <span class="tag">Data Visualization</span>
-    </div>
-
-    <div class="card">
-      <b>Tools</b><br>
-      <span class="tag">Power BI</span>
-      <span class="tag">Tableau</span>
-      <span class="tag">Excel</span>
-    </div>
-
-    <div class="card">
-      <b>Libraries</b><br>
-      <span class="tag">NumPy</span>
-      <span class="tag">Pandas</span>
-      <span class="tag">Matplotlib</span>
-      <span class="tag">Seaborn</span>
-      <span class="tag">Scikit-learn</span>
-      <span class="tag">TensorFlow</span>
-    </div>
-
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-
-  <div class="card edu-item">
-    <h3>B.Tech – Computer Science (Data Science)</h3>
-    <p>Ravindra College of Engineering for Women, Kurnool, India</p>
-    <p><b>CGPA:</b> 8 / 10</p>
-    <p class="edu-year">2022 – 2026</p>
-  </div>
-
-  <div class="card edu-item">
-    <h3>Intermediate</h3>
-    <p>Narayana Junior College, Hyderabad, India</p>
-    <p><b>Percentage:</b> 90.3%</p>
-    <p class="edu-year">2020 – 2022</p>
-  </div>
-
-  <div class="card edu-item">
-    <h3>SSC</h3>
-    <p>Bhashyam Public School, India</p>
-    <p><b>Percentage:</b> 98.0%</p>
-    <p class="edu-year">2019 – 2020</p>
-  </div>
-
-</section>
-
 <section id="projects">
   <h2>Projects</h2>
 
   <div class="card">
     <h3>Crime Data Analysis & Visualization</h3>
+    <img class="project-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
     <p>Performed exploratory data analysis to identify crime trends and patterns.</p>
   </div>
 
   <div class="card">
     <h3>Unemployment Data Analysis</h3>
+    <img class="project-img" src="https://images.unsplash.com/photo-1581091870627-3c8d3b1d2b4a">
     <p>Analyzed unemployment datasets to understand regional and temporal trends.</p>
   </div>
 
   <div class="card">
     <h3>Iris Flower Classification</h3>
+    <img class="project-img" src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
     <p>Implemented machine learning models to classify iris flower species.</p>
   </div>
 
   <div class="card">
     <h3>Brain Tumor Classification (CNN)</h3>
+    <img class="project-img" src="https://images.unsplash.com/photo-1581091012184-5c8e5f2f0d3d">
     <p>Built a deep learning CNN model to classify brain tumors from MRI images.</p>
   </div>
 
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+    <img src="https://images.unsplash.com/photo-1534759846116-5799c33ce22a">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+    <img src="https://images.unsplash.com/photo-1581091870627-3c8d3b1d2b4a">
+    <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
+    <img src="https://images.unsplash.com/photo-1581091012184-5c8e5f2f0d3d">
+  </div>
 </section>
 
 <section id="contact">
@@ -338,9 +227,7 @@ window.addEventListener("scroll",()=>{
     }
   });
 });
-function toggle(){
-  document.body.classList.toggle("dark");
-}
+function toggle(){document.body.classList.toggle("dark");}
 </script>
 
 </body>
