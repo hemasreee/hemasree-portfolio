@@ -6,40 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+      --bg: #f8fafc;
+      --text: #1f2937;
+      --card: #ffffff;
+      --header: #e0f2fe;
+      --accent: #6366f1;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --text: #e5e7eb;
+      --card: #1e293b;
+      --header: #020617;
+      --accent: #818cf8;
+    }
+
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, sans-serif;
-      background-color: #f8fafc;
-      color: #1f2937;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.7;
+      transition: all 0.3s ease;
     }
 
     header {
       position: sticky;
       top: 0;
-      background: #e0f2fe;
+      background: var(--header);
       padding: 16px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #bae6fd;
       z-index: 1000;
     }
 
     header h2 {
       margin: 0;
-      color: #0f172a;
     }
 
     nav a {
       margin-left: 20px;
       text-decoration: none;
-      color: #0369a1;
+      color: var(--text);
       font-weight: 500;
-    }
-
-    nav a:hover {
-      color: #0284c7;
     }
 
     section {
@@ -63,169 +74,4 @@
       margin-top: 40px;
       opacity: 1;
       transform: none;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 12px;
-      color: #0f172a;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #475569;
-      margin-bottom: 30px;
-    }
-
-    .resume-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      background-color: #6366f1;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-    }
-
-    h2 {
-      color: #0f172a;
-      margin-bottom: 28px;
-    }
-
-    .project-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 26px;
-      margin-bottom: 26px;
-      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .skill-box {
-      background: #f1f5f9;
-      padding: 22px;
-      border-radius: 14px;
-    }
-
-    .contact-box {
-      background: #fef3c7;
-      padding: 34px;
-      border-radius: 18px;
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #64748b;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header>
-    <h2>Madala Hemasree</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero show">
-    <h1>Data Science Student | Aspiring Data Analyst</h1>
-    <p>
-      Turning data into insights using analytics, machine learning,
-      and visualization.
-    </p>
-
-    <a href="resume.pdf" class="resume-btn">Download Resume</a>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am Madala Hemasree, a B.Tech Computer Science and Engineering
-      (Data Science) student with a CGPA of 8.0 and hands-on experience
-      in data analysis, machine learning, and visualization.
-    </p>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project-card">
-      <h3>Crime Data Analysis and Visualization</h3>
-      <p>
-        Analyzed crime datasets and built interactive dashboards
-        using Streamlit.
-      </p>
-      <p><strong>Tools:</strong> Python, Pandas, Streamlit</p>
-    </div>
-
-    <div class="project-card">
-      <h3>Brain Tumor Classification (CNN)</h3>
-      <p>
-        Developed a deep learning CNN model for MRI-based
-        brain tumor classification.
-      </p>
-      <p><strong>Tools:</strong> Python, Deep Learning</p>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Skills</h2>
-
-    <div class="skills-grid">
-      <div class="skill-box"><strong>Languages</strong><br>Python, SQL, Java (Basic)</div>
-      <div class="skill-box"><strong>Tools</strong><br>Power BI, Tableau</div>
-      <div class="skill-box"><strong>Libraries</strong><br>NumPy, Pandas, Matplotlib</div>
-      <div class="skill-box"><strong>Soft Skills</strong><br>Teamwork, Leadership</div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-
-    <div class="contact-box">
-      <p><strong>Name:</strong> Madala Hemasree</p>
-      <p><strong>Email:</strong> madalahemasree0331@gmail.com</p>
-      <p><strong>Contact:</strong> 6309816547</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 Madala Hemasree | Data Science Portfolio
-  </footer>
-
-  <!-- JAVASCRIPT FOR SCROLL ANIMATION -->
-  <script>
-    const sections = document.querySelectorAll("section");
-
-    window.addEventListener("scroll", () => {
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const triggerPoint = window.innerHeight - 100;
-
-        if (sectionTop < triggerPoint) {
-          section.classList.add("show");
-        }
-      });
-    });
-  </script>
-
-</body>
-</html>
+      padding: 90px 4
