@@ -26,13 +26,29 @@ body.dark{
 body{
   margin:0;
   font-family:"Segoe UI",Tahoma,sans-serif;
-  background:
-    radial-gradient(circle at top left, #eef2ff, transparent 40%),
-    radial-gradient(circle at bottom right, #ecfeff, transparent 40%),
-    var(--bg);
+  background:var(--bg);
   color:var(--text);
   line-height:1.7;
   transition:.3s;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND FIGURES */
+.bg-shape{
+  position:fixed;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#e0e7ff,#ecfeff);
+  opacity:0.35;
+  z-index:-1;
+}
+.bg1{top:-140px; left:-140px;}
+.bg2{bottom:-160px; right:-160px;}
+
+body.dark .bg-shape{
+  background:linear-gradient(135deg,#1e293b,#020617);
+  opacity:0.6;
 }
 
 /* HEADER */
@@ -48,7 +64,7 @@ header{
   z-index:1000;
 }
 body.dark header{
-  background:rgba(2,6,23,0.8);
+  background:rgba(2,6,23,0.85);
 }
 nav a{
   margin-right:16px;
@@ -191,6 +207,10 @@ footer{
 
 <body>
 
+<!-- BACKGROUND FIGURES -->
+<div class="bg-shape bg1"></div>
+<div class="bg-shape bg2"></div>
+
 <header>
   <strong>Madala Hemasree</strong>
   <nav>
@@ -236,7 +256,6 @@ footer{
     <div class="card skill-card">
       <h3>Data & Analytics</h3>
       <div class="tags">
-        <span class="tag">Data Analysis</span>
         <span class="tag">EDA</span>
         <span class="tag">Statistics</span>
         <span class="tag">Predictive Analytics</span>
@@ -272,21 +291,21 @@ footer{
 
   <div class="card">
     <h3>Crime Data Analysis & Visualization</h3>
-    <img class="project-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+    <img class="project-img" src="crime.png">
     <p>Analyzed crime trends and hotspots using EDA and interactive dashboards.</p>
     <p><b>Tools:</b> Python, Pandas, Streamlit</p>
   </div>
 
   <div class="card">
     <h3>Unemployment Data Analysis</h3>
-    <img class="project-img" src="https://images.unsplash.com/photo-1581091870627-3c8d3b1d2b4a">
-    <p>Identified unemployment patterns using statistical analysis and charts.</p>
+    <img class="project-img" src="unemployment.png">
+    <p>Identified unemployment patterns using statistical analysis.</p>
     <p><b>Tools:</b> Python, Matplotlib</p>
   </div>
 
   <div class="card">
     <h3>Brain Tumor Classification (CNN)</h3>
-    <img class="project-img" src="https://images.unsplash.com/photo-1581091012184-5c8e5f2f0d3d">
+    <img class="project-img" src="brain_tumor.png">
     <p>Built a CNN model to classify brain tumors from MRI images.</p>
     <p><b>Tools:</b> Python, Deep Learning</p>
   </div>
