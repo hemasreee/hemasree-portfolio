@@ -2,72 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hemasree | Data Science Portfolio</title>
+  <title>Madala Hemasree | Data Science Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #ffffff;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: #f8fafc;
       color: #1f2937;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     header {
       position: sticky;
       top: 0;
-      background-color: #0a2540;
-      color: #ffffff;
-      padding: 15px 40px;
+      background: #e0f2fe;
+      padding: 16px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #bae6fd;
       z-index: 1000;
     }
 
     header h2 {
       margin: 0;
+      color: #0f172a;
     }
 
     nav a {
-      color: #ffffff;
       margin-left: 20px;
       text-decoration: none;
+      color: #0369a1;
       font-weight: 500;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #0284c7;
     }
 
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 60px 40px;
+      padding: 70px 40px;
     }
 
     .hero {
       text-align: center;
-      padding-top: 80px;
-      padding-bottom: 80px;
+      background: linear-gradient(135deg, #fdf2f8, #ecfeff);
+      border-radius: 16px;
+      margin-top: 40px;
     }
 
-    .project-card {
-      border: 1px solid #e5e7eb;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 6px;
-    }
-
-    h1 {
-      font-size: 32px;
+    .hero h1 {
+      font-size: 34px;
       margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #475569;
     }
 
     h2 {
-      color: #0a2540;
-      margin-bottom: 20px;
+      color: #0f172a;
+      margin-bottom: 24px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-box {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .contact-box {
+      background: #fef3c7;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
     }
   </style>
 </head>
@@ -76,7 +115,7 @@
 
   <!-- HEADER -->
   <header>
-    <h2>Hemasree</h2>
+    <h2>Madala Hemasree</h2>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -89,8 +128,8 @@
   <section class="hero">
     <h1>Data Science Student | Aspiring Data Analyst</h1>
     <p>
-      B.Tech CSE (Data Science) student passionate about data analysis,
-      machine learning, and data visualization.
+      Turning data into insights using analytics, machine learning,
+      and visualization.
     </p>
   </section>
 
@@ -98,11 +137,11 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am pursuing B.Tech in Computer Science and Engineering
-      (Data Science) from Ravindra College of Engineering for Women
-      with a CGPA of 8.0. I have hands-on experience in data analysis,
-      machine learning, and visualization through academic and
-      internship projects.
+      I am Madala Hemasree, a B.Tech Computer Science and Engineering
+      (Data Science) student from Ravindra College of Engineering
+      for Women with a CGPA of 8.0. I have practical experience in
+      data analysis, machine learning, and data visualization through
+      academic projects and internships.
     </p>
   </section>
 
@@ -113,9 +152,9 @@
     <div class="project-card">
       <h3>Crime Data Analysis and Visualization</h3>
       <p>
-        Integrated and analyzed crime datasets to identify trends
-        and hotspots. Developed interactive dashboards and a
-        Streamlit web application for decision support.
+        Performed exploratory data analysis on crime datasets to
+        identify trends and hotspots. Developed interactive
+        visualizations and a Streamlit web app for decision support.
       </p>
       <p><strong>Tools:</strong> Python, Pandas, Streamlit</p>
     </div>
@@ -123,8 +162,8 @@
     <div class="project-card">
       <h3>Brain Tumor Classification (CNN)</h3>
       <p>
-        Built a deep learning model using multi-scale CNN and
-        attention mechanisms to classify brain tumors from MRI scans.
+        Designed a deep learning model using multi-scale CNN and
+        attention mechanisms to classify brain tumors from MRI images.
       </p>
       <p><strong>Tools:</strong> Python, CNN, Deep Learning</p>
     </div>
@@ -132,8 +171,8 @@
     <div class="project-card">
       <h3>Iris Flower Classification</h3>
       <p>
-        Developed a machine learning model to classify iris species
-        using feature selection and preprocessing techniques.
+        Built a machine learning model to classify iris species
+        with effective data preprocessing and feature selection.
       </p>
       <p><strong>Tools:</strong> Python, Machine Learning</p>
     </div>
@@ -142,20 +181,36 @@
   <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
-    <p>
-      <strong>Languages:</strong> Python, SQL, Java (Basic)<br>
-      <strong>Tools:</strong> Power BI, Tableau<br>
-      <strong>Libraries:</strong> NumPy, Pandas, Matplotlib<br>
-      <strong>Soft Skills:</strong> Teamwork, Leadership, Collaboration
-    </p>
+
+    <div class="skills-grid">
+      <div class="skill-box">
+        <strong>Languages</strong><br>
+        Python, SQL, Java (Basic)
+      </div>
+
+      <div class="skill-box">
+        <strong>Tools</strong><br>
+        Power BI, Tableau
+      </div>
+
+      <div class="skill-box">
+        <strong>Libraries</strong><br>
+        NumPy, Pandas, Matplotlib
+      </div>
+
+      <div class="skill-box">
+        <strong>Soft Skills</strong><br>
+        Teamwork, Leadership, Collaboration
+      </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: hemasree0331@gmail.com</p>
-    <p>LinkedIn | GitHub</p>
-  </section>
 
-</body>
-</html>
+    <div class="contact-box">
+      <p><strong>Name:</strong> Madala Hemasree</p>
+      <p><strong>Email:</strong> madalahemasree0331@gmail.com</p>
+      <p><strong>Contact:</strong> 6309816547</p>
+      <p>
