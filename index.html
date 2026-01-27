@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Madala Hemasree | Professional Portfolio</title>
+<title>Madala Hemasree | Data Science Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -31,53 +31,35 @@ body{
   overflow-x:hidden;
 }
 
-/* === BACKGROUND SHAPES (VISIBLE) === */
+/* BACKGROUND SHAPES */
 .background{
   position:fixed;
   inset:0;
   z-index:-1;
-  overflow:hidden;
 }
-
 .shape{
   position:absolute;
   border-radius:50%;
   opacity:0.45;
 }
-
 .shape.one{
-  width:420px;
-  height:420px;
+  width:420px;height:420px;
   background:#c7d2fe;
-  top:-120px;
-  left:-120px;
+  top:-120px;left:-120px;
 }
-
 .shape.two{
-  width:320px;
-  height:320px;
+  width:320px;height:320px;
   background:#bae6fd;
-  top:35%;
-  right:-120px;
+  top:35%;right:-120px;
 }
-
 .shape.three{
-  width:280px;
-  height:280px;
+  width:280px;height:280px;
   background:#fde68a;
-  bottom:-120px;
-  left:30%;
+  bottom:-120px;left:30%;
 }
-
-body.dark .shape.one{
-  background:#1e293b;
-}
-body.dark .shape.two{
-  background:#020617;
-}
-body.dark .shape.three{
-  background:#312e81;
-}
+body.dark .shape.one{background:#1e293b;}
+body.dark .shape.two{background:#020617;}
+body.dark .shape.three{background:#312e81;}
 
 /* HEADER */
 header{
@@ -91,9 +73,7 @@ header{
   align-items:center;
   z-index:1000;
 }
-body.dark header{
-  background:rgba(2,6,23,0.9);
-}
+body.dark header{background:rgba(2,6,23,0.9);}
 nav a{
   margin-right:16px;
   text-decoration:none;
@@ -118,10 +98,7 @@ section{
   transform:translateY(40px);
   transition:.8s;
 }
-section.show{
-  opacity:1;
-  transform:translateY(0);
-}
+section.show{opacity:1;transform:translateY(0);}
 
 /* HERO */
 .hero{
@@ -132,7 +109,6 @@ section.show{
   margin-top:40px;
   opacity:1;
   transform:none;
-  box-shadow:0 25px 45px rgba(0,0,0,.08);
 }
 body.dark .hero{
   background:linear-gradient(135deg,#020617,#1e293b);
@@ -150,12 +126,6 @@ body.dark .hero{
   font-weight:600;
 }
 
-/* TITLES */
-h2{
-  margin-bottom:28px;
-  font-size:28px;
-}
-
 /* CARDS */
 .card{
   background:var(--card);
@@ -163,10 +133,6 @@ h2{
   padding:24px;
   margin-bottom:24px;
   box-shadow:0 14px 30px rgba(0,0,0,.06);
-  transition:.3s;
-}
-.card:hover{
-  transform:translateY(-6px);
 }
 
 /* SKILLS */
@@ -196,40 +162,17 @@ body.dark .tag{
   margin:14px 0;
 }
 
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-.gallery img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:18px;
-  transition:.4s;
-}
-.gallery img:hover{
-  transform:scale(1.1);
-}
-
 /* FOOTER */
 footer{
   text-align:center;
   padding:24px;
   color:var(--muted);
 }
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero h1{font-size:28px;}
-}
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
 <div class="background">
   <div class="shape one"></div>
   <div class="shape two"></div>
@@ -242,7 +185,6 @@ footer{
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
     <button class="toggle" onclick="toggle()">🌙 / ☀️</button>
   </nav>
@@ -250,16 +192,25 @@ footer{
 
 <section class="hero show">
   <h1>Data Science Student | Aspiring Data Analyst</h1>
-  <p>Turning data into insights using analytics, machine learning & visualization</p>
+  <p>Turning data into insights using analytics, machine learning, and visualization</p>
   <a href="resume.pdf" class="resume">Download Resume</a>
 </section>
 
 <section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am Madala Hemasree, a B.Tech CSE (Data Science) student with CGPA 8.0,
-    passionate about data analysis, ML, and visualization.
-  </p>
+  <h2>Professional Summary</h2>
+  <div class="card">
+    <p>
+      <strong>Data Science Student</strong><br><br>
+      Hello, I’m Madala Hemasree, a B.Tech Computer Science (Data Science) graduate with a strong
+      interest in data analysis and machine learning. I have worked with Python, SQL, Power BI,
+      and data visualization tools on academic and personal projects where I analyzed datasets,
+      built models, and created clear insights through reports and dashboards.
+      <br><br>
+      I use analytical thinking and basic AI tools to understand data efficiently while maintaining
+      accuracy. I am looking for an entry-level Data Analyst or Data Science role where I can
+      support data-driven decisions and continue learning.
+    </p>
+  </div>
 </section>
 
 <section id="skills">
@@ -279,18 +230,12 @@ footer{
       <span class="tag">Predictive Analytics</span>
     </div>
     <div class="card">
-      <b>Tools & Libraries</b><br>
+      <b>Tools</b><br>
       <span class="tag">Power BI</span>
       <span class="tag">Tableau</span>
       <span class="tag">NumPy</span>
       <span class="tag">Pandas</span>
       <span class="tag">Matplotlib</span>
-    </div>
-    <div class="card">
-      <b>Soft Skills</b><br>
-      <span class="tag">Teamwork</span>
-      <span class="tag">Leadership</span>
-      <span class="tag">Problem Solving</span>
     </div>
   </div>
 </section>
@@ -299,18 +244,8 @@ footer{
   <h2>Projects</h2>
   <div class="card">
     <h3>Crime Data Analysis & Visualization</h3>
-    <img class="project-img" src="crime.png">
-    <p>Identified crime trends and hotspots using EDA.</p>
-  </div>
-</section>
-
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
-    <img src="https://images.unsplash.com/photo-1534759846116-5799c33ce22a">
-    <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+    <img src="crime.png" class="project-img">
+    <p>Analyzed crime trends and hotspots using exploratory data analysis.</p>
   </div>
 </section>
 
@@ -323,21 +258,19 @@ footer{
 </section>
 
 <footer>
-© 2026 Madala Hemasree | Professional Portfolio
+© 2026 Madala Hemasree | Data Science Portfolio
 </footer>
 
 <script>
-const secs=document.querySelectorAll("section");
+const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
-secs.forEach(s=>{
-if(s.getBoundingClientRect().top<window.innerHeight-100){
-s.classList.add("show");
-}
+  sections.forEach(sec=>{
+    if(sec.getBoundingClientRect().top<window.innerHeight-100){
+      sec.classList.add("show");
+    }
+  });
 });
-});
-function toggle(){
-document.body.classList.toggle("dark");
-}
+function toggle(){document.body.classList.toggle("dark");}
 </script>
 
 </body>
