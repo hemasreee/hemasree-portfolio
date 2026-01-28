@@ -280,6 +280,16 @@ section{
   border:4px solid #ffffff;
   box-shadow:0 12px 30px rgba(0,0,0,0.15);
 }
+/* ===== STAR SKILL RATINGS ===== */
+.stars{
+  color:#facc15; /* gold */
+  font-size:18px;
+  letter-spacing:2px;
+}
+
+.stars .inactive{
+  color:#d1d5db; /* gray */
+}
 
   
 
@@ -361,14 +371,23 @@ section{
   <h2>Skills</h2>
 
   <div class="skills-grid">
-
     <div class="card">
-      <strong>Programming</strong><br><br>
-      <span class="tag">Python</span>
-      <span class="tag">SQL</span>
-      <span class="tag">Java (Basic)</span>
-      <span class="tag">DSA – Intermediate</span>
-    </div>
+  <strong>Programming</strong><br><br>
+
+  <p>Python</p>
+  <div class="stars">⭐⭐⭐⭐<span class="inactive">⭐</span></div>
+
+  <p>SQL</p>
+  <div class="stars">⭐⭐⭐⭐<span class="inactive">⭐</span></div>
+
+  <p>Java</p>
+  <div class="stars">⭐⭐⭐<span class="inactive">⭐⭐</span></div>
+
+  <p>DSA</p>
+  <div class="stars">⭐⭐⭐⭐<span class="inactive">⭐</span></div>
+</div>
+
+    
 
     <div class="card">
       <strong>Data & Analytics</strong><br><br>
