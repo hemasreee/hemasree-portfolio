@@ -148,15 +148,6 @@ body.dark .hero{
 
 /* ===== CARDS ===== */
 .card{
-  .card{
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
   background:var(--card);
   border-radius:16px;
   padding:24px;
@@ -165,7 +156,15 @@ body.dark .hero{
 
   position:relative;
   z-index:10;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
 
 
 /* ===== PROJECT IMAGES ===== */
