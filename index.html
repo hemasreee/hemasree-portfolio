@@ -35,10 +35,13 @@ body{
 /* ===== PASTEL BACKGROUND CIRCLES ===== */
 .bg-shape{
   position:fixed;
-  z-index:-1;
+  z-index:-999;   /* FORCE BACKGROUND TO BOTTOM */
   opacity:0.55;
   filter: blur(35px);
+  pointer-events:none;
   border-radius:50%;
+}
+
 }
 
 .bg1{
